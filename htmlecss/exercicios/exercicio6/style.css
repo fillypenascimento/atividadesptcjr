@@ -1,0 +1,62 @@
+body{
+  background-color: brown;
+}
+.box{
+  background-color: green;
+  width: auto;
+  height: 140px;
+  margin: 10px 30px 30px 30px;
+  border-radius: 8px;
+
+}
+.box2{
+  background-color: green;
+  width: auto;
+  height: 85px;
+  margin: 10px 30px 30px 30px;
+  border-radius: 8px;
+}
+
+.noticia{
+  background-color: grey;
+  width: auto;
+  height: auto;
+  margin: 5px 10px 5px 10px;
+  border-radius: 8px;
+}
+.topic{
+  background-color: white;
+  width: auto;
+  height: 50px;
+  margin: 5px 10px 5px 10px;
+  border-radius: 8px;
+}
+#conteudo{
+  background-color: green;
+  width: auto;
+  height: 580px;
+  margin: 10px 30px 30px 30px;
+  border-radius: 8px;
+}
+
+#news{
+  background-color: white;
+  width: auto;
+  height: 375px;
+  border-radius: 8px;
+}
+
+#direito{
+  background-color: white;
+  width: auto;
+  height: 135px;
+  border-radius: 8px;
+}
+
+#fotter{
+  background-color: green;
+  width: auto;
+  height: 85px;
+  margin: 10px 30px 30px 30px;
+  border-radius: 8px;
+}
