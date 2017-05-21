@@ -1,0 +1,80 @@
+-- Lista de exercícios Banco de Dados
+
+-- Questão 1
+      UPDATE empresa.empregado SET salario=28000 WHERE codemp=3;
+
+-- Questão 2
+      SELECT * FROM empresa.empregado WHERE salario > 30000;
+
+-- Questão 3
+      SELECT empresa.empregado.nome, empresa.trabalhaem.codproj FROM empresa.empregado, empresa.trabalhaem
+      WHERE trabalhaem.codemp = empregado.codemp AND trabalhaem.codproj = 1;
+
+-- Questão 4
+      SELECT empresa.empregado.nome, empresa.empregado.endereco, empresa.departamento.coddepto, empresa
+      FROM empresa.empregado JOIN empresa.departamento
+      ON empresa.empregado.coddepto = empresa.departamento.coddepto
+      WHERE empresa.departamento.coddepto = 5;
+
+-- Questão 5
+      SELECT empresa.empregado.codemp, empresa.empregado.nome FROM empresa.empregado WHERE nome LIKE 'A%' OR nome LIKE'a%';
+
+-- Questão 6
+      SELECT upper(empresa.empregado.nome) FROM empresa.empregado;
+
+-- Questão 7
+      SELECT upper(empresa.empregado.nome) FROM empresa.empregado;
+
+-- Questão 8
+      UPDATE empresa.empregado SET nome=upper(empresa.empregado.nome);
+
+-- Questão 9
+      SELECT initcap(empresa.empregado.nome) FROM empresa.empregado;
+
+-- Questão 10
+
+
+-- Questão 11
+
+
+-- Questão 12
+
+
+-- Questão 13
+      SELECT * FROM empresa.empregado WHERE empresa.empregado.datanasc
+      BETWEEN '1950-01-01'AND '1970-01-01';
+
+-- Questão 14
+      SELECT titulo FROM empresa.projeto ORDER BY titulo ASC;
+
+-- Questão 15
+      SELECT empresa.empregado.codemp, empresa.empregado.nome, empresa.trabalhaem.horas
+      FROM empresa.empregado JOIN empresa.trabalhaem
+      ON empresa.empregado.codemp = empresa.trabalhaem.codemp
+      WHERE empresa.trabalhaem.codproj = 3
+      ORDER BY horas DESC;
+
+-- Questão 16
+      SELECT DISTINCT empresa.empregado.codemp, empresa.empregado.nome FROM
+      empresa.empregado JOIN empresa.trabalhaem
+      ON empresa.empregado.codemp = empresa.trabalhaem.codemp
+      WHERE empresa.trabalhaem.horas >= 10
+      ORDER BY codemp ASC;
+
+-- Questão 17
+      SELECT COUNT(*) FROM empresa.empregado WHERE empresa.empregado.coddepto=4;
+
+-- Questão 18
+      SELECT empresa.trabalhaem.codproj AS Projeto,
+             min(empresa.trabalhaem.horas) AS Mínimo,
+             max(empresa.trabalhaem.horas) AS Máximo,
+             AVG(empresa.trabalhaem.horas) AS Média
+      FROM empresa.trabalhaem GROUP BY empresa.trabalhaem.codproj
+      ORDER BY empresa.trabalhaem.codproj;
+
+-- Questão 19
+      SELECT empresa.trabalhaem.codproj, AVG(empresa.trabalhaem.horas) AS Média
+      FROM empresa.trabalhaem GROUP BY empresa.trabalhaem.codproj
+      HAVING AVG(empresa.trabalhaem.horas)>20 ORDER BY empresa.trabalhaem.codproj;
+
+-- Questão 20
